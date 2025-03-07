@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Sales Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Retail Sales Dashboard</h1>
+    
+    <div class="chart-container">
+        <div class="chart-box" id="top-products"></div>
+        <div class="chart-box" id="category-sales"></div>
+        <div class="chart-box" id="store-sales"></div>
+        <div class="chart-box" id="profit-margin"></div>
+    </div>
+    
+
+    <script>
+        function loadChart(endpoint, divId) {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    Plotly.newPlot(divId, data);
+                })
+                .catch(error => console.error('Error loading chart:', error));
+        }
+        loadChart('/charts/top-products', 'top-products');
+        loadChart('/charts/category-sales', 'category-sales');
+        loadChart('/charts/store-sales', 'store-sales');
+        loadChart('/charts/profit-margin', 'profit-margin');
+    </script>
+</body>
+</html>
