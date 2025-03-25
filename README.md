@@ -18,5 +18,5 @@ This is a Flask-based web application that visualizes a retail shop's monthly sa
 ## Installation 🚀  
 ### 1️⃣ Clone the repository  
 ```sh
-git clone https://github.com/yourusername/retail-sales-dashboard.git
+https://github.com/Manikandan-412/Retail_Store_Dashboard.git
 cd retail-sales-dashboard
