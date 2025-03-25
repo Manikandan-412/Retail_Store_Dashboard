@@ -5,7 +5,7 @@ import io
 import base64
 
 # Load CSV data
-def load_data(csv_file="data/sales_data.csv"):
+def load_data(csv_file="retail_data.csv"):
     df = pd.read_csv(csv_file, parse_dates=["Date"])
     return df
 
